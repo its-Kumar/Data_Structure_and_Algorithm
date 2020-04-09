@@ -1,4 +1,7 @@
 class Stack(object):
+    """
+        Stack implementation using array implementation.
+    """
     def __init__(self, limit = 10):
         self.limit = limit
         self.stk = []
