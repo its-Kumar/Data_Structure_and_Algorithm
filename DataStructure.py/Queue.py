@@ -2,6 +2,7 @@ class Queue(object):
     """
         Queue Implementation: Circular Queue.
     """
+
     def __init__(self, limit=5):
         self.front = None
         self.rear = None
@@ -27,9 +28,9 @@ class Queue(object):
     def deQueue(self):
         if self.size <= 0:
             print("Queue underflow..!!! ")
-            return 
+            return
         self.que.pop(0)
-        self.size -=1
+        self.size -= 1
         if self.size == 0:
             self.front = self.rear = None
         else:
@@ -37,19 +38,20 @@ class Queue(object):
         print("Queue after deQueue: ", self.que)
 
     def queueRear(self):
-        if self.rear== None:
+        if self.rear == None:
             print("Sorry the queue is Empty.")
             raise IndexError
         return self.que[self.rear]
 
     def queueFront(self):
-        if self.front== None:
+        if self.front == None:
             print("Sorry the queue is Empty.")
-            raise IndexError  
+            raise IndexError
         return self.que[self.front]
 
     def size(self):
         return self.size
+
 
 if __name__ == "__main__":
     q = Queue()

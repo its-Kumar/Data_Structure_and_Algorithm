@@ -23,7 +23,7 @@ class Queue(object):
         if self.rear == None:
             print("Sorry the queue is Empty")
             raise IndexError
-        return self.rear.data 
+        return self.rear.data
 
     def queueFront(self):
         if self.front == None:
@@ -34,8 +34,8 @@ class Queue(object):
     def enQueue(self, item):
         new_node = Node(item)
         if self.rear == None:
-            self.front = self.rear =new_node
-            return 
+            self.front = self.rear = new_node
+            return
         self.rear.next = new_node
         self.rear = new_node
         self.size += 1
@@ -43,15 +43,15 @@ class Queue(object):
     def deQueue(self):
         if self.is_empty():
             print("Queue is Empty")
-            return 
+            return
         temp = self.front
-        self.front = temp.next 
+        self.front = temp.next
         self.size -= 1
         if self.front == None:
             self.rear = None
-        return temp.data 
+        return temp.data
 
-    
+
 if __name__ == "__main__":
     q = Queue()
     q.enQueue('first')

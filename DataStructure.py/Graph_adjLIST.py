@@ -1,5 +1,5 @@
 """
-    Graph Adjacency List representation. 
+    Graph Adjacency List representation.
 """
 
 import sys

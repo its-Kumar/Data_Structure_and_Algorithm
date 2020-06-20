@@ -3,13 +3,12 @@
     Program for traversing a directed graph through recursive DFS
 *
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #define MAX 100
 #define initial 1
 #define visited 2
 #define finished 3
-
 
 int n;
 int adj[MAX][MAX];
@@ -24,27 +23,29 @@ main(void)
     DF_Traversal();
 }
 
-void DF_Traversal(){
+void DF_Traversal()
+{
     int v;
-    for(v=0; v<n; v++)
+    for (v = 0; v < n; v++)
         state[v] = initial;
     printf("Enter starting vertex of Dept First Search : ");
     scanf("%d", &v);
     DFS(v);
-    for(v=0; v<n; v++)
+    for (v = 0; v < n; v++)
     {
-        if(state[v] == initial)
+        if (state[v] == initial)
             DFS(v);
     }
     printf("\n");
-
 }
-void DFS(int v){
+void DFS(int v)
+{
     int i;
-    printf("%d ",v);
+    printf("%d ", v);
     state[v] = visited;
-    for(i=0; i<n; i++){
-        if(adj[v][i] = 1 && state[i]==initial)
+    for (i = 0; i < n; i++)
+    {
+        if (adj[v][i] = 1 && state[i] == initial)
             DFS(i);
     }
     state[v] = finished;

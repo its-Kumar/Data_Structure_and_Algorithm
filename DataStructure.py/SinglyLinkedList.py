@@ -5,9 +5,9 @@ class Node:
     def __init__(self, data=None):
         self.data = data
         self.next = None
-    
+
     def set_data(self, data):
-        self.data = data 
+        self.data = data
 
     def get_data(self):
         return self.data
@@ -48,7 +48,7 @@ class SinglyLinkedList(object):
             while current != None:
                 print(current.get_data(), end="\t")
                 current = current.get_next()
-        
+
     # Insersion
     def insert_atBegining(self, data):
         new_node = Node(data)
@@ -84,9 +84,9 @@ class SinglyLinkedList(object):
             while count < pos -1:
                 count += 1
                 current = current.next
-            new_node.next = current.next 
+            new_node.next = current.next
             current.next = new_node
-    
+
     # Deletion
     def delete_firstNode(self):
         if self.head == None:
@@ -100,13 +100,13 @@ class SinglyLinkedList(object):
         if self.head == None:
             print("Deletion not possible")
             return None
-        current = self.head 
+        current = self.head
         prev = self.head
         while current.next != None:
             prev = current
             current = current.next
         prev.next = None
-        return current.data 
+        return current.data
 
     def remove(self, data):
         if self.head == None:
@@ -116,13 +116,13 @@ class SinglyLinkedList(object):
             prev = self.head
             while (current.next != None) or (current.data != data):
                 if current.data == data:
-                    prev.next = current.next 
+                    prev.next = current.next
                     return current.data
                 else:
                     prev = current
-                    current = current.next 
+                    current = current.next
             print("The Value not present in the list")
-    
+
     def delete_byPosition(self, pos):
         if self.head == None:
             print("List is empty")
@@ -132,7 +132,7 @@ class SinglyLinkedList(object):
             prev = self.head
             if pos > self.length() or pos < 0:
                 print("The position does not exist. Please enter a valid position")
-            else: 
+            else:
                 while current.next != None or count <pos:
                     count += 1
                     if pos == count:
@@ -140,7 +140,7 @@ class SinglyLinkedList(object):
                         return current.data
                     else:
                         prev = current
-                        current = current.next 
+                        current = current.next
 
     def delete(self):
         self.head = None

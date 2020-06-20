@@ -66,7 +66,7 @@ def delete(root, key: int):
             root = None
     return root
 
-    
+
 
 if __name__ == "__main__":
     root = None
@@ -110,5 +110,3 @@ if __name__ == "__main__":
 
         else:
             print("Enter Valid Choice...")
-
-    

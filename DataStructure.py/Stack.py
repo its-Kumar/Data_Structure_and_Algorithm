@@ -2,12 +2,13 @@ class Stack(object):
     """
         Stack implementation using array implementation.
     """
-    def __init__(self, limit = 10):
+
+    def __init__(self, limit=10):
         self.limit = limit
         self.stk = []
-    
+
     def is_empty(self):
-        return stk ==[]
+        return stk == []
 
     def is_full(self):
         return self.length() == self.limit
@@ -23,19 +24,20 @@ class Stack(object):
         print("Stack after push", self.stk)
 
     def pop(self):
-        if self.length() <=0:
+        if self.length() <= 0:
             print("Stack Underflow")
             return None
         return self.stk.pop()
 
     def peek(self):
-        if self.length() <=0:
+        if self.length() <= 0:
             print("Stack Underflow")
             return None
         return self.stk[-1]
 
     def __str__(self):
         return f"Stack: {self.stk}"
+
 
 if __name__ == "__main__":
     s = Stack()
@@ -49,14 +51,14 @@ if __name__ == "__main__":
         ch = int(input("Enter your choice"))
         if ch == 0:
             break
-        elif ch ==1:
+        elif ch == 1:
             print(s)
-        elif ch ==2:
+        elif ch == 2:
             value = input("Enter a value to push: ")
             s.push(value)
-        elif ch ==3:
+        elif ch == 3:
             print(s.pop())
-        elif ch ==4:
+        elif ch == 4:
             print(s.peek())
         elif ch == 5:
             print(s.length())

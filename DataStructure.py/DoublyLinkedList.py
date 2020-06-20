@@ -19,8 +19,8 @@ class DoublyLinkedList:
         else:
             while ptr != None:
                 print(ptr.data, end="  ")
-                ptr = ptr.next 
-    
+                ptr = ptr.next
+
     def count(self):
         count  = 0
         ptr = self.head
@@ -41,7 +41,7 @@ class DoublyLinkedList:
             new_node.next = self.head
             self.head.prev = new_node
             self.head = new_node
-    
+
     def insert_atLast(self, data):
         ptr = self.head
         new_node = Node(data)
@@ -49,7 +49,7 @@ class DoublyLinkedList:
             self.head = new_node
         else:
             while ptr.next != None:
-                ptr = ptr.next 
+                ptr = ptr.next
             ptr.next = new_node
             new_node.prev = ptr
 
@@ -57,7 +57,7 @@ class DoublyLinkedList:
         l = self.count()
         if pos > l or pos < 0:
             print("Invalid position")
-            return 
+            return
         if pos == 0:
             self.insert_atBegining(data)
             return
@@ -69,10 +69,10 @@ class DoublyLinkedList:
         new_node = Node(data)
         while(count < pos-1):
             count += 1
-            ptr = ptr.next 
+            ptr = ptr.next
         new_node.prev = ptr
         new_node.next = ptr.next
-        ptr.next = new_node 
+        ptr.next = new_node
 
     def delete_firstNode(self):
         if self.head == None:
@@ -89,10 +89,10 @@ class DoublyLinkedList:
             return None
         ptr = self.head
         while ptr.next != None:
-            ptr = ptr.next 
+            ptr = ptr.next
         ptr.prev.next = None
-        return ptr.data 
-    
+        return ptr.data
+
     def remove(self, data):
         if self.head == None:
             print("List is empty")
@@ -101,10 +101,10 @@ class DoublyLinkedList:
             while (ptr.next != None) or (ptr.data != data):
                 if ptr.data == data:
                     ptr.prev.next = ptr.next
-                    ptr.next.prev = ptr.prev 
+                    ptr.next.prev = ptr.prev
                     return ptr.data
                 else:
-                    ptr = ptr.next 
+                    ptr = ptr.next
             print("The Value not present in the list")
 
     def delete_byPosition(self, pos):
@@ -115,15 +115,15 @@ class DoublyLinkedList:
             ptr = self.head
             if pos > self.count() or pos < 0:
                 print("The position does not exist. Please enter a valid position")
-            else: 
+            else:
                 while ptr.next != None or count <pos:
                     count += 1
                     if pos == count:
                         ptr.prev.next = ptr.next
-                        ptr.next.prev = ptr.prev 
+                        ptr.next.prev = ptr.prev
                         return ptr.data
                     else:
-                        ptr = ptr.next                        
+                        ptr = ptr.next
 
     def delete(self):
         self.head = None

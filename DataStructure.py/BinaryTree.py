@@ -22,6 +22,8 @@ class BinaryTreeNode:
 # Traversal
 
 # Preorder
+
+
 def preorder_recursive(root):
     """Print preorder traversal of tree with recursion"""
     if root:
@@ -47,6 +49,8 @@ def preorder(root):
     print()
 
 # Inorder
+
+
 def inorder_recursive(root):
     """Print inorder traversal of tree with recursion"""
     if root:
@@ -54,11 +58,12 @@ def inorder_recursive(root):
         print(root.data, end="  ")
         inorder_recursive(root.right)
 
+
 def inorder(root):
     """Print inorder traversal of tree"""
     if not root:
         print("Tree is Empty.")
-        return 
+        return
     stack = []
     node = root
     while stack or node:
@@ -72,6 +77,8 @@ def inorder(root):
     print()
 
 # Postorder
+
+
 def postorder_recursive(root):
     """Print postorder traversal of tree with recursion"""
     if root:
@@ -79,11 +86,12 @@ def postorder_recursive(root):
         postorder_recursive(root.right)
         print(root.data, end="  ")
 
+
 def postorder(root):
     """Print postorder traversal of tree"""
     if not root:
         print("Tree is Empty.")
-        return 
+        return
     stack = []
     node = root
     visited = set()
@@ -104,7 +112,7 @@ def postorder(root):
     print()
 
 
-# Levelorder 
+# Levelorder
 def levelorder(root):
     """Print levelorder traversal of tree"""
     h = height(root)
@@ -115,12 +123,13 @@ def levelorder(root):
 def print_level(root, level):
     """print Single level"""
     if not root:
-        return 
+        return
     if level == 1:
         print(root.data, end="  ")
-    elif level >1:
+    elif level > 1:
         print_level(root.left, level-1)
         print_level(root.right, level-1)
+
 
 def height(root):
     """return height of the tree"""
@@ -130,16 +139,19 @@ def height(root):
     rheight = height(root.right)
     if lheight > rheight:
         return lheight + 1
-    else: return rheight +1
+    else:
+        return rheight + 1
+
 
 def display_tree(root, level):
     if root != None:
-        display_tree(root.right, level +1)
+        display_tree(root.right, level + 1)
         print()
         for i in range(level):
             print("\t", end="")
         print(root.data, end="")
-        display_tree(root.left, level +1)
+        display_tree(root.left, level + 1)
+
 
 def create_BinaryTree(inor, preor, inStart, inEnd):
     """
@@ -152,20 +164,20 @@ def create_BinaryTree(inor, preor, inStart, inEnd):
 
     """
     if inStart > inEnd:
-        return 
+        return
     temp = BinaryTreeNode(preor[create_BinaryTree.index])
-    create_BinaryTree.index +=1
+    create_BinaryTree.index += 1
 
     if inStart == inEnd:
         return temp
 
-    for i in range(inStart, inEnd +1):
+    for i in range(inStart, inEnd + 1):
         if inor[i] == temp.data:
             index = i
 
     temp.left = create_BinaryTree(inor, preor, inStart, index-1)
-    temp.right = create_BinaryTree(inor, preor, index +1, inEnd)
-    return temp    
+    temp.right = create_BinaryTree(inor, preor, index + 1, inEnd)
+    return temp
 
 
 def create_Treeby_level(root, levelor, i, n):
@@ -183,8 +195,8 @@ def create_Treeby_level(root, levelor, i, n):
         temp = BinaryTreeNode(levelor[i])
         root = temp
 
-        root.left = create_Treeby_level(root.left, levelor, 2*i +1, n)
-        root.right = create_Treeby_level(root.right, levelor, 2*i +2, n)
+        root.left = create_Treeby_level(root.left, levelor, 2*i + 1, n)
+        root.right = create_Treeby_level(root.right, levelor, 2*i + 2, n)
     return root
 
 
@@ -195,25 +207,24 @@ if __name__ == "__main__":
     root.left.left = BinaryTreeNode(4)
     root.left.right = BinaryTreeNode(5)
 
-    #preorder_recursive(root)
+    # preorder_recursive(root)
     preorder(root)
     print()
-    #inorder_recursive(root)
+    # inorder_recursive(root)
     inorder(root)
     print()
-    #postorder_recursive(root)
+    # postorder_recursive(root)
     postorder(root)
     print()
-    #levelorder(root)
+    # levelorder(root)
     #display_tree(root, 0)
     t2 = None
-    t2 = create_Treeby_level(t2, [1,2,3,4,5,6,7,8,9], 0, 9)
+    t2 = create_Treeby_level(t2, [1, 2, 3, 4, 5, 6, 7, 8, 9], 0, 9)
     display_tree(t2, 0)
     t3 = None
     inor = ['D', 'B', 'E', 'A', 'F', 'C']
     preor = ['A', 'B', 'D', 'E', 'C', 'F']
     # Static Variable
     create_BinaryTree.index = 0
-    t3 = create_BinaryTree(inor, preor, 0, len(inor) -1)
+    t3 = create_BinaryTree(inor, preor, 0, len(inor) - 1)
     display_tree(t3, 0)
-

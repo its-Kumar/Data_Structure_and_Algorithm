@@ -25,6 +25,7 @@ class Node:
     def __str__(self):
         return f"Node[{self.data}]"
 
+
 class CircularLinkedList:
     def __init__(self, head=None):
         self.head = head
@@ -45,12 +46,11 @@ class CircularLinkedList:
         if current == None:
             print("List is empty")
         else:
-            while True: 
+            while True:
                 print(current.data, end="  ")
                 current = current.next
                 if current == self.head:
                     break
-
 
     def insert_atBegining(self, data):
         new_node = Node(data)

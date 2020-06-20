@@ -76,7 +76,7 @@ main()
 		default:
 			printf("Wrong choice\n");
 		} /*End of switch*/
-	}	 /*End of while*/
+	}	  /*End of while*/
 } /*End of main( )*/
 
 struct node *create_list(struct node *last)
