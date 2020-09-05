@@ -2,6 +2,7 @@ class Node:
     """
     Node class to represent a node of link list.
     """
+
     def __init__(self, data=None):
         self.data = data
         self.next = None
@@ -27,6 +28,7 @@ class SinglyLinkedList(object):
     SinglyLinkedList class to represent a singly linked list.
     """
     # Constructure
+
     def __init__(self, head=None):
         self.head = head
 
@@ -70,7 +72,7 @@ class SinglyLinkedList(object):
 
     def insert_atPosition(self, pos, data):
         l = self.length()
-        if pos > l or pos <0:
+        if pos > l or pos < 0:
             print("Insertion is not possible..!!")
             return None
         if pos == 0:
@@ -81,7 +83,7 @@ class SinglyLinkedList(object):
             new_node = Node(data)
             count = 0
             current = self.head
-            while count < pos -1:
+            while count < pos - 1:
                 count += 1
                 current = current.next
             new_node.next = current.next
@@ -133,7 +135,7 @@ class SinglyLinkedList(object):
             if pos > self.length() or pos < 0:
                 print("The position does not exist. Please enter a valid position")
             else:
-                while current.next != None or count <pos:
+                while current.next != None or count < pos:
                     count += 1
                     if pos == count:
                         prev.next = current.next
@@ -144,7 +146,6 @@ class SinglyLinkedList(object):
 
     def delete(self):
         self.head = None
-
 
 
 if __name__ == "__main__":
@@ -189,7 +190,7 @@ if __name__ == "__main__":
             lst.remove(data)
         elif choice == 9:
             lst.delete()
-        elif choice ==10:
+        elif choice == 10:
             print(lst.length())
         else:
             print("Enter a valid choice: ")

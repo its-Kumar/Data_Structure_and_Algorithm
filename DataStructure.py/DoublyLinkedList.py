@@ -5,7 +5,8 @@ class Node:
         self.next = None
 
     def __str__(self):
-        return "Node[Data] = %s"%(self.data)
+        return "Node[Data] = %s" % (self.data)
+
 
 class DoublyLinkedList:
     def __init__(self, head=None):
@@ -14,7 +15,7 @@ class DoublyLinkedList:
     # Traversal
     def display(self):
         ptr = self.head
-        if ptr==None:
+        if ptr == None:
             print("Link List is empty..")
         else:
             while ptr != None:
@@ -22,9 +23,9 @@ class DoublyLinkedList:
                 ptr = ptr.next
 
     def count(self):
-        count  = 0
+        count = 0
         ptr = self.head
-        if ptr==None:
+        if ptr == None:
             print("Link List is empty..")
         else:
             while ptr != None:
@@ -116,7 +117,7 @@ class DoublyLinkedList:
             if pos > self.count() or pos < 0:
                 print("The position does not exist. Please enter a valid position")
             else:
-                while ptr.next != None or count <pos:
+                while ptr.next != None or count < pos:
                     count += 1
                     if pos == count:
                         ptr.prev.next = ptr.next
@@ -171,7 +172,7 @@ if __name__ == "__main__":
             lst.remove(data)
         elif choice == 9:
             lst.delete()
-        elif choice ==10:
+        elif choice == 10:
             print(lst.count())
         else:
             print("Enter a valid choice: ")
