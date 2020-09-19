@@ -5,6 +5,8 @@ This repository contains two directories
 
 * Data_Structure_through_C
 * DataStructure.py
+* Algorithms_C
+* Algorithms_py
 
 ## Data_Structure_Through_C
 
@@ -24,13 +26,7 @@ All Data Structures Implementation in **C language** using *pointers, structures
   * Expression Tree
   * Threaded Binary Tree, etc.
 
-* 00_Sorting_00
 
-  * Bubble sort
-  * Heap Sort
-  * Merge Sort
-  * Quick sort
-  * Insertion Sort, etc.
 
 * Link list
 
@@ -56,3 +52,23 @@ All Data Structure Implementation in **python language**
 * Heap
 * HashTable
 * Graph, etc.
+
+## Algorithms_C
+
+  Algorithms implementation in C language.
+* 00_Sorting_00
+
+  sorting techniques in C language
+  * Bubble sort
+  * Heap Sort
+  * Merge Sort
+  * Quick sort
+  * Insertion Sort, etc.
+
+## Algorithms_py
+
+  Algorithms implementaion in python language.
+
+---
+
+[KUMAR SHANU](https://github.com/its-Kumar/)
