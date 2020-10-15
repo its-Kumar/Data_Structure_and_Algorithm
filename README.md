@@ -1,5 +1,7 @@
 # Data_Structure
 
+This repository was used in Data Structure & Algorithms Webinar Organised by Developer Student Club Bijnor for demonstration. Speakers were [Kumar Shanu](https://github.com/its-Kumar/) and Shubham.
+
 Implementation of popular **Data Structures** in two programming laguages i.e. C and Python by Me([Kumar Shanu](https://github.com/its-Kumar/)).\
 This repository contains two directories
 
