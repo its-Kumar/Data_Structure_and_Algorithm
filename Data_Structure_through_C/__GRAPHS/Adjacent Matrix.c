@@ -39,5 +39,5 @@ void main()
 			printf("%3d", adj[i][j]);
 		printf("\n");
 	}
-	getch();
+	//getch();
 }

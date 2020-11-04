@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void lsearch(int[], int, int);
 void LSearch(int[], int, int);
 void main()
 {

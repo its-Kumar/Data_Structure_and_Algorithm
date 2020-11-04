@@ -1,3 +1,7 @@
+/*
+Longest Common Subsequence
+*/
+
 #include <stdio.h>
 #include <string.h>
 

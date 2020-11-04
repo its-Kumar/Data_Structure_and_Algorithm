@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #define MAX 50
 int adj[MAX][MAX];
 int n; // no of edges
@@ -58,7 +60,7 @@ void create_graph()
 			adj[source][dest] = 1;
 	}
 }
-main()
+int main()
 {
 	int choice, source, dest;
 	create_graph();
@@ -92,4 +94,5 @@ main()
 			break;
 		}
 	}
+	return 0;
 }
