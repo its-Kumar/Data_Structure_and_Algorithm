@@ -17,7 +17,7 @@ class Queue(object):
         return self.size
 
     def is_empty(self):
-        return (self.size == 0)
+        return self.size == 0
 
     def queueRear(self):
         if self.rear == None:
@@ -54,9 +54,9 @@ class Queue(object):
 
 if __name__ == "__main__":
     q = Queue()
-    q.enQueue('first')
-    q.enQueue('second')
-    q.enQueue('third')
+    q.enQueue("first")
+    q.enQueue("second")
+    q.enQueue("third")
     print(q.deQueue())
     print(q.queueFront())
     print(q.queueRear())

@@ -1,6 +1,6 @@
 class Queue(object):
     """
-        Queue Implementation: Circular Queue.
+    Queue Implementation: Circular Queue.
     """
 
     def __init__(self, limit=5):
@@ -55,9 +55,9 @@ class Queue(object):
 
 if __name__ == "__main__":
     q = Queue()
-    q.enQueue('first')
-    q.enQueue('second')
-    q.enQueue('third')
+    q.enQueue("first")
+    q.enQueue("second")
+    q.enQueue("third")
     q.deQueue()
     print(q.queueFront())
     print(q.queueRear())

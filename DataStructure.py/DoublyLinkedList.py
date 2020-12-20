@@ -68,7 +68,7 @@ class DoublyLinkedList:
         ptr = self.head
         count = 0
         new_node = Node(data)
-        while(count < pos-1):
+        while count < pos - 1:
             count += 1
             ptr = ptr.next
         new_node.prev = ptr

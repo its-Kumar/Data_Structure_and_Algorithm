@@ -30,7 +30,7 @@ class Vertex:
 
 class Graph:
     def __init__(self, numVertices, cost=0):
-        self.adjMatrix = [[-1]*numVertices for _ in range(numVertices)]
+        self.adjMatrix = [[-1] * numVertices for _ in range(numVertices)]
         self.numVertices = numVertices
         self.vertices = []
         for i in range(numVertices):
@@ -80,18 +80,18 @@ class Graph:
 
 if __name__ == "__main__":
     G = Graph(5)
-    G.setVertex(0, 'a')
-    G.setVertex(1, 'b')
-    G.setVertex(2, 'c')
-    G.setVertex(3, 'd')
-    G.setVertex(4, 'e')
-    G.addEdge('a', 'e', 10)
-    G.addEdge('a', 'c', 20)
-    G.addEdge('c', 'b', 30)
-    G.addEdge('b', 'c', 40)
-    G.addEdge('e', 'd', 50)
-    G.addEdge('f', 'e', 60)
-    print('Graph data:')
+    G.setVertex(0, "a")
+    G.setVertex(1, "b")
+    G.setVertex(2, "c")
+    G.setVertex(3, "d")
+    G.setVertex(4, "e")
+    G.addEdge("a", "e", 10)
+    G.addEdge("a", "c", 20)
+    G.addEdge("c", "b", 30)
+    G.addEdge("b", "c", 40)
+    G.addEdge("e", "d", 50)
+    G.addEdge("f", "e", 60)
+    print("Graph data:")
     print(G.printMatrix())
     print(G.getEdges())
     print(G.getVertices())

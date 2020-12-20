@@ -22,19 +22,19 @@ def BFSTraversal(G, s):
     start.setPrevious(None)
     vertQueue = Queue()
     vertQueue.enQueue(start)
-    while (vertQueue.size > 0):
+    while vertQueue.size > 0:
         currentVert = vertQueue.deQueue()
         print(currentVert.getVertexID())
         for nbr in currentVert.getConnections():
-            if nbr.getColor == 'White':
-                nbr.setColor('Gray')
+            if nbr.getColor == "White":
+                nbr.setColor("Gray")
                 nbr.setDistance(currentVert.getDistance() + 1)
                 nbr.setPrevious(currentVert)
                 vertQueue.enQueue(nbr)
-            currentVert.setColor('Black')
+            currentVert.setColor("Black")
 
 
 def BFS(G):
     for v in G:
-        if(v.getColor() == 'White'):
+        if v.getColor() == "White":
             BFSTraversal(G, v.getVertexID())

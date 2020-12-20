@@ -40,8 +40,9 @@ def binary_search(lst: list, n: int) -> int:
     return -1
 
 
-def binary_search_recursive(lst: list, n: int, left_index: int,
-                            right_index: int) -> int:
+def binary_search_recursive(
+    lst: list, n: int, left_index: int, right_index: int
+) -> int:
     """Search any element in a list using recursive binary search and return
         index of element.
 
@@ -75,6 +76,7 @@ if __name__ == "__main__":
     print(f"Number found at index {index} using linear search.")
     index = binary_search(numbers_list, number_to_find)
     print(f"Number found at index {index} using binary search.")
-    index = binary_search_recursive(numbers_list, number_to_find, 0,
-                                    len(numbers_list) - 1)
+    index = binary_search_recursive(
+        numbers_list, number_to_find, 0, len(numbers_list) - 1
+    )
     print(f"Number found at index {index} using recursive binary search.")

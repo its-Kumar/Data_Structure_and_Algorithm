@@ -41,10 +41,10 @@ class Vertex:
         self.visited = True
 
     def __str__(self):
-        return str(self.id) + ' adjacent: ' + str([x.id for x in self.adjacent])
+        return str(self.id) + " adjacent: " + str([x.id for x in self.adjacent])
 
 
-class Graph():
+class Graph:
     def __init__(self):
         self.vertDictionary = {}
         self.numVertices = 0
@@ -98,18 +98,18 @@ class Graph():
 
 if __name__ == "__main__":
     G = Graph()
-    G.addVertex('a')
-    G.addVertex('b')
-    G.addVertex('c')
-    G.addVertex('d')
-    G.addVertex('c')
-    G.addEdge('a', 'b', 4)
-    G.addEdge('a', 'c', 1)
-    G.addEdge('c', 'b', 2)
-    G.addEdge('b', 'e', 4)
-    G.addEdge('c', 'd', 4)
-    G.addEdge('d', 'e', 4)
-    print('Graph data:')
+    G.addVertex("a")
+    G.addVertex("b")
+    G.addVertex("c")
+    G.addVertex("d")
+    G.addVertex("c")
+    G.addEdge("a", "b", 4)
+    G.addEdge("a", "c", 1)
+    G.addEdge("c", "b", 2)
+    G.addEdge("b", "e", 4)
+    G.addEdge("c", "d", 4)
+    G.addEdge("d", "e", 4)
+    print("Graph data:")
     print(G.getEdges())
     print(G.getVertices())
     print("\nAdjacency List:")

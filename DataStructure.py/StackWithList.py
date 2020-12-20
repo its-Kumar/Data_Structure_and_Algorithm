@@ -30,6 +30,6 @@ class Stack(object):
 
 
 if __name__ == "__main__":
-    s = Stack(['first', 'second', 'third'])
+    s = Stack(["first", "second", "third"])
     print(s.pop())
     print(s.pop())

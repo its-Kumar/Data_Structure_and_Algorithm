@@ -1,5 +1,6 @@
 import BinaryTree as bt
 
+
 class TreeNode:
     def __init__(self, data=None):
         self.left = None
@@ -8,6 +9,7 @@ class TreeNode:
 
     def __str__(self):
         return f"Node[{self.data}]"
+
 
 def search(root, key: int):
     if not root:
@@ -19,6 +21,7 @@ def search(root, key: int):
     else:
         return search(root.left, key)
 
+
 def min(root):
     if not root:
         return None
@@ -26,12 +29,14 @@ def min(root):
         root = root.left
     return root
 
+
 def max(root):
     if not root:
         return None
     while root.right != None:
         root = root.right
     return root
+
 
 def insert(root, key: int):
     if not root:
@@ -44,6 +49,7 @@ def insert(root, key: int):
     else:
         print("Duplicate key....")
     return root
+
 
 def delete(root, key: int):
     if not root:
@@ -67,7 +73,6 @@ def delete(root, key: int):
     return root
 
 
-
 if __name__ == "__main__":
     root = None
     while True:
@@ -83,13 +88,13 @@ if __name__ == "__main__":
         ch = int(input("Enter your choice: "))
         if ch == 0:
             break
-        elif ch ==1:
+        elif ch == 1:
             value = int(input("Enter value to insert "))
             root = insert(root, value)
-        elif ch ==2:
+        elif ch == 2:
             value = int(input("Enter value to delete "))
             root = delete(root, value)
-        elif ch ==3:
+        elif ch == 3:
             value = int(input("Enter value to search "))
             ptr = search(root, value)
             if ptr:
@@ -97,15 +102,15 @@ if __name__ == "__main__":
             else:
                 print("The value not found in the tree.")
 
-        elif ch ==4:
-            print("Max: ",max(root))
-        elif ch ==5:
+        elif ch == 4:
+            print("Max: ", max(root))
+        elif ch == 5:
             print("Min: ", min(root))
-        elif ch==6:
+        elif ch == 6:
             bt.inorder(root)
-        elif ch ==7:
+        elif ch == 7:
             bt.preorder(root)
-        elif ch ==8:
+        elif ch == 8:
             bt.display_tree(root, 0)
 
         else:

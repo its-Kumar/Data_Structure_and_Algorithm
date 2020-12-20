@@ -14,7 +14,7 @@ def insertion_sort(elements: list) -> None:
 
 
 if __name__ == "__main__":
-    arr = [eval(x) for x in input('Enter the array: ').split()]
+    arr = [eval(x) for x in input("Enter the array: ").split()]
     print("Array is: ", arr)
     insertion_sort(arr)
     print("Array is: ", arr)

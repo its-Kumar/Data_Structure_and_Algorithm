@@ -1,4 +1,4 @@
-class Heap():
+class Heap:
     def __init__(self):
         self.heapList = [0]
         self.size = 0
@@ -8,15 +8,15 @@ class Heap():
         Parent will be at math.floor(index/2). Since integer
         division simulates the floor function, we don't expliocitly use it.
         """
-        return index//2
+        return index // 2
 
     def leftChild(self, index):
         """return index of leftchild. """
-        return 2*index
+        return 2 * index
 
     def rightChild(self, index):
         """return index of rightchild. """
-        return 2*index + 1
+        return 2 * index + 1
 
     def getMax(self):
         """Root is the maxVal in MaxHeap."""
@@ -31,7 +31,7 @@ class Heap():
         return self.heapList[1]
 
     def percolate_down(self, i):
-        while (i*2) <= self.size:
+        while (i * 2) <= self.size:
             minimum_child = self.minChild(i)
             if self.heapList[i] > self.heapList[minimum_child]:
                 tmp = self.heapList[i]
@@ -40,19 +40,21 @@ class Heap():
             i = minimum_child
 
     def minChild(self, i):
-        if i*2 + 1 > self.size:
-            return i*2
+        if i * 2 + 1 > self.size:
+            return i * 2
         else:
-            if self.heapList[i*2] < self.heapList[i*2 + 1]:
-                return i*2
+            if self.heapList[i * 2] < self.heapList[i * 2 + 1]:
+                return i * 2
             else:
-                return i*2 + 1
+                return i * 2 + 1
 
     def percolate_up(self, i):
-        while i//2 > 0:
-            if self.heapList[i] < self.heapList[i//2]:
-                self.heapList[i //
-                              2], self.heapList[i] = self.heapList[i], self.heapList[i//2]
+        while i // 2 > 0:
+            if self.heapList[i] < self.heapList[i // 2]:
+                self.heapList[i // 2], self.heapList[i] = (
+                    self.heapList[i],
+                    self.heapList[i // 2],
+                )
             i //= 2
 
     def delete_max(self):

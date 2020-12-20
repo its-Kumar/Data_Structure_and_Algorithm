@@ -45,7 +45,7 @@ def merge_sort(arr: list):
     if len(arr) <= 1:
         return
 
-    mid = len(arr)//2
+    mid = len(arr) // 2
     left = arr[:mid]
     right = arr[mid:]
     merge_sort(left)

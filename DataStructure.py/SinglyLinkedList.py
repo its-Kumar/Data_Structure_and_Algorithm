@@ -27,6 +27,7 @@ class SinglyLinkedList(object):
     """
     SinglyLinkedList class to represent a singly linked list.
     """
+
     # Constructure
 
     def __init__(self, head=None):

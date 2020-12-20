@@ -1,6 +1,8 @@
 class Stack(object):
-    """
-        Stack implementation using array implementation.
+    """Stack implementation using array implementation.
+
+    Args:
+        limit (int): size of the stack
     """
 
     def __init__(self, limit=10):
@@ -8,15 +10,26 @@ class Stack(object):
         self.stk = []
 
     def is_empty(self):
-        return stk == []
+        """Check for the stcak to be empty
+        """
+        return self.stk == []
 
     def is_full(self):
+        """Check for the stcak to be full
+        """
         return self.length() == self.limit
 
     def length(self):
+        """return the size of the stack
+        """
         return len(self.stk)
 
     def push(self, item):
+        """push operation of stack
+
+        Args:
+            item (any): element to insert
+        """
         if self.length() >= self.limit:
             print("Stack OverFlow")
             return
@@ -24,12 +37,19 @@ class Stack(object):
         print("Stack after push", self.stk)
 
     def pop(self):
+        """Pop operation of stack
+
+        Returns:
+            value at top
+        """
         if self.length() <= 0:
             print("Stack Underflow")
             return None
         return self.stk.pop()
 
     def peek(self):
+        """Returns value at top of the stack
+        """
         if self.length() <= 0:
             print("Stack Underflow")
             return None
