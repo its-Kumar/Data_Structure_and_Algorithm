@@ -1,5 +1,6 @@
 /*
-Longest Common Subsequence
+    Author: Kumar Shanu
+    Problem: Longest Common Subsequence
 */
 
 #include <stdio.h>
@@ -12,18 +13,18 @@ int max(int a, int b)
 
 // Recursive solution (time complexity = O(2^n)
 
-int lcs(char *s1, char *s2, int m, int n)
+int lcs_rec(char *s1, char *s2, int m, int n)
 {
     if (m == 0 || n == 0)
         return 0;
     if (s1[m - 1] == s2[n - 1])
-        return 1 + lcs(s1, s2, m - 1, n - 1);
+        return 1 + lcs_rec(s1, s2, m - 1, n - 1);
     else
-        return max(lcs(s1, s2, m, n - 1), lcs(s1, s2, m - 1, n));
+        return max(lcs_rec(s1, s2, m, n - 1), lcs_rec(s1, s2, m - 1, n));
 }
 
-// Solution with Memorization (time complexity = O(m X n)
-int lcs(char *s1, char *s2, int m, int n)
+// Solution with Dynamic Programming (time complexity = O(m X n)
+int lcs_dp(char *s1, char *s2, int m, int n)
 {
     int lst[m + 1][n + 1];
     int i, j;
@@ -73,8 +74,8 @@ int main()
     int lst[m + 1][10];
     memset(lst, -1, sizeof(lst));
 
-    printf("Longest common subsequence lenght is : %d", lcs(s1, s2, m, n, lst));
-    //printf("Longest common subsequence lenght is : %d",lcs(s1,s2,m,n));
+    printf("Longest common subsequence lenght is : %d\n", lcs(s1, s2, m, n, lst));
+    //printf("Longest common subsequence lenght is : %d",lcs_dp(s1,s2,m,n));
 
     return 0;
 }
