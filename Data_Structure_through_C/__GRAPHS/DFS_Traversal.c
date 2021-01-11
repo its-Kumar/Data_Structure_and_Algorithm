@@ -2,19 +2,20 @@
 Program for traversing a directed graph through DFS, visiting only vertices reached from
 start vertex
 */
+// @its-Kumar
 
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 100
 #define initial 1
 #define visited 2
-int n;
-int adj[MAX][MAX];
+int n;             //no of vertex
+int adj[MAX][MAX]; //adjacency matrix
 int state[MAX];
 void DF_Traversal();
 void DFS(int v);
 void create_graph();
-int stack[MAX], top = -1;
+int stack[MAX], top = -1; //stack for DFS
 void push(int v);
 int pop();
 int isEmpty_stack();

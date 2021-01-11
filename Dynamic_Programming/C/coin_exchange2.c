@@ -10,6 +10,14 @@ Dynamic Programming
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * @brief
+ *
+ * @param coins(int[]) array of coins
+ * @param n(int) length of coins array
+ * @param amount(int) given amount
+ * @return int
+ */
 int findchange(int coins[], int n, int amount)
 {
     if (amount == 0)

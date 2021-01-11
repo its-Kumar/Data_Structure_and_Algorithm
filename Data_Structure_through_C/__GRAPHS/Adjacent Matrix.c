@@ -1,7 +1,13 @@
+// Graph representation in adjacency matrix
+// @its-Kumar
+
 #include <stdio.h>
 #define MAX 50
+
+// adjacency matrix
 int adj[MAX][MAX];
 int n; //no of vertices
+
 void main()
 {
 	int i, j, max_edges, source, dest;

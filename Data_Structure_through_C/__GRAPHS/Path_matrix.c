@@ -1,4 +1,5 @@
-//program to find out the path matrix by powers of adjacency matrix
+// program to find out the path matrix by powers of adjacency matrix
+// @its-Kumar
 
 #include <stdio.h>
 #define MAX 100
@@ -7,8 +8,8 @@ void display(int matrix[][MAX]);
 void pow_matrix(int p, int adjp[][MAX]);
 void multiply(int mat1[][MAX], int mat2[][MAX], int mat3[][MAX]);
 void create_graph();
-int adj[MAX][MAX];
-int n;
+int adj[MAX][MAX]; // adjacency matrix
+int n;             //#of vertex
 
 int main(void)
 {
@@ -47,6 +48,10 @@ int main(void)
     printf("The path matrix is : \n");
     display(path);
 }
+/**
+ * @brief Create a graph object
+ *
+ */
 void create_graph()
 {
 
@@ -71,6 +76,12 @@ void create_graph()
     }
 }
 
+/**
+ * @brief construct power matrix
+ *
+ * @param p power matrix
+ * @param adjp adjacency matrix
+ */
 void pow_matrix(int p, int adjp[][MAX])
 {
 
@@ -89,6 +100,13 @@ void pow_matrix(int p, int adjp[][MAX])
     }
 }
 
+/**
+ * @brief multiply two matrix
+ *
+ * @param mat1 matrix 1
+ * @param mat2 matrix 2
+ * @param mat3 resultant matrix
+ */
 void multiply(int mat1[][MAX], int mat2[][MAX], int mat3[][MAX])
 {
     int i, j, k;
@@ -104,6 +122,7 @@ void multiply(int mat1[][MAX], int mat2[][MAX], int mat3[][MAX])
     }
 }
 
+// print the matrix
 void display(int matrix[][MAX])
 {
 

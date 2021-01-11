@@ -68,9 +68,37 @@ def LCS_memo(x: str, y: str, m: int, n: int) -> int:
     return memo[m-1][n-1]
 
 
+def print_LCS(x: str, y: str, table: "list[list[int]]") -> str:
+    """find longest common subsequence
+
+    Args:
+
+        x (str): first string
+        y (str): second string
+        table (list[list[int]]): memorization table from dynamic solution
+
+    Returns:
+
+        str: lcs
+    """
+    i, j = len(x), len(y)
+    sub = ""
+    while(i > 0 and j > 0):
+        if(x[i-1] == y[j-1]):
+            sub += x[i]
+            i -= 1
+            j -= 1
+        elif(table[i][j-1] > table[i-1][j]):
+            j -= 1
+        else:
+            i -= 1
+    return sub[::-1]
+
+
 if __name__ == "__main__":
     s1 = "abaaba"
     s2 = "babbab"
     # print("length of longest common subsequence is: ", LCS(s1, s2))
     print("length of longest common subsequence is: ",
           LCS_memo(s1, s2, len(s1), len(s2)))
+    print("longest common subsequence is: ", print_LCS(s1, s2, memo))

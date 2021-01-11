@@ -1,4 +1,5 @@
 //program of fully in-threaded binary tree
+// @its-Kumar
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +10,7 @@ typedef enum
   true
 } boolean;
 
+// node of threaded binary tree
 struct th_node
 {
   struct th_node *left;
@@ -19,6 +21,7 @@ struct th_node
 };
 typedef struct th_node th_node;
 
+// insorder successor of ptr
 th_node *in_succ(th_node *ptr)
 {
   if (ptr->rthread == true)
@@ -31,6 +34,8 @@ th_node *in_succ(th_node *ptr)
     return ptr;
   }
 }
+
+//inorder predecessor of ptr
 th_node *in_pred(th_node *ptr)
 {
   if (ptr->lthread == true)
@@ -43,6 +48,7 @@ th_node *in_pred(th_node *ptr)
     return ptr;
   }
 }
+
 void inorder(th_node *root)
 {
   th_node *ptr;
@@ -87,6 +93,7 @@ void preorder(th_node *root)
   }
 }
 
+// insert into threaded tree
 th_node *insert(th_node *root, int key)
 {
   th_node *tmp, *par, *ptr;

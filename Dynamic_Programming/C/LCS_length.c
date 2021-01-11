@@ -11,8 +11,15 @@ int max(int a, int b)
     return (a > b) ? a : b;
 }
 
-// Recursive solution (time complexity = O(2^n)
-
+/**
+ * @brief Recursive solution (time complexity = O(2^n)
+ *
+ * @param s1(char[]) string 1
+ * @param s2(char[]) string 2
+ * @param m(int) length of string 1
+ * @param n(int) length of string 2
+ * @return int - length of longest common subsequence
+ */
 int lcs_rec(char *s1, char *s2, int m, int n)
 {
     if (m == 0 || n == 0)
@@ -23,7 +30,15 @@ int lcs_rec(char *s1, char *s2, int m, int n)
         return max(lcs_rec(s1, s2, m, n - 1), lcs_rec(s1, s2, m - 1, n));
 }
 
-// Solution with Dynamic Programming (time complexity = O(m X n)
+/**
+ * @brief Solution with Dynamic Programming (time complexity = O(m X n)
+ *
+ * @param s1(char[]) string 1
+ * @param s2(char[]) string 2
+ * @param m(int) length of string 1
+ * @param n(int) length of string 2
+ * @return int - length of longest common subsequence
+ */
 int lcs_dp(char *s1, char *s2, int m, int n)
 {
     int lst[m + 1][n + 1];
@@ -43,7 +58,15 @@ int lcs_dp(char *s1, char *s2, int m, int n)
     return lst[m][n];
 }
 
-// Recursive solution with Memorization
+/**
+ * @brief Recursive solution with Memorization
+ *
+ * @param s1(char[]) string 1
+ * @param s2(char[]) string 2
+ * @param m(int) length of string 1
+ * @param n(int) length of string 2
+ * @return int - length of longest common subsequence
+ */
 int lcs(char *s1, char *s2, int m, int n, int lst[][10])
 {
     if (m == 0 || n == 0)

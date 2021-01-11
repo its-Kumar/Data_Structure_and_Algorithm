@@ -6,6 +6,32 @@ Dynamic Programming
 """
 
 
+def isSubset_rec(arr: "list[int]", n: "int", target: "int") -> bool:
+    """Subset sum problem recursive solution
+
+    Args:
+
+        arr (list[int]): array of integer
+        n (int): lenght of the array
+        target (int): given sum
+
+    Returns:
+
+        bool: True or False
+    """
+    if(target == 0):
+        return True
+
+    if(n == 0):
+        return False
+
+    if(arr[n-1] <= target):
+        return isSubset_rec(arr, n-1, target-arr[n-1]) or isSubset_rec(
+            arr, n-1, target)
+    else:
+        return isSubset_rec(arr, n-1, target)
+
+
 def isSubset_sum(arr: "list[int]", target: "int") -> bool:
     """Subset sum problem
 

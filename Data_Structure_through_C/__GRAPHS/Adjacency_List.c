@@ -1,8 +1,12 @@
+//graph using adjacency list
+// @its-Kumar
+
 #include <stdio.h>
 #include <stdlib.h>
 
-//graph using adjacency list
+// edges contains pointers destination vertex and next edge
 struct edge;
+// vertex contains info and pointers to first_edge and next vertex
 struct vertex
 {
 	struct vertex *next_vertex;
@@ -15,6 +19,7 @@ struct edge
 	struct edge *next_edge;
 };
 
+// display the graph
 void display()
 {
 	struct vertex *ptr;
@@ -34,6 +39,11 @@ void display()
 	}
 }
 
+/**
+ * @brief insert a new vertex with given info
+ *
+ * @param u info to the vertex
+ */
 void insert_vertex(int u)
 {
 	struct vertex *tmp, *ptr;
@@ -53,6 +63,7 @@ void insert_vertex(int u)
 	ptr->next_vertex = tmp;
 }
 
+// delete vertex from the graph having u info/val
 void delete_vertex(int u)
 {
 	struct edge *p, *temporary;
@@ -98,6 +109,7 @@ void delete_vertex(int u)
 	}
 }
 
+// delete incoming edge to vertex u
 void deleteIncomingEdge(int u)
 {
 	struct vertex *ptr;
@@ -134,6 +146,12 @@ void deleteIncomingEdge(int u)
 	}
 }
 
+/**
+ * @brief Find the vertex having info u
+ *
+ * @param u info/ vertex to find
+ * @return struct vertex* - the pointer to the vertex
+ */
 struct vertex *findVertex(int u)
 {
 	struct vertex *ptr, *loc;
@@ -150,6 +168,12 @@ struct vertex *findVertex(int u)
 	}
 }
 
+/**
+ * @brief Insert an edge between vertex u and v
+ *
+ * @param u vertex 1
+ * @param v vertex 2
+ */
 void insert_edge(int u, int v)
 {
 	struct vertex *locu, *locv;
@@ -180,6 +204,12 @@ void insert_edge(int u, int v)
 	ptr->next_edge = tmp;
 }
 
+/**
+ * @brief Delete edge between vertex u and vertex v
+ *
+ * @param u vertex
+ * @param v vertex
+ */
 void delete_edge(int u, int v)
 {
 	struct vertex *locu;
@@ -218,6 +248,7 @@ void delete_edge(int u, int v)
 	printf("This Edge not present in the graph .... \n");
 }
 
+// main function
 main()
 {
 	int choice, u, source, dest;

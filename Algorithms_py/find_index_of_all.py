@@ -2,10 +2,12 @@ def search(lst: list, target: int):
     """search the element in list and return index of all the occurances
 
     Args:
+
         lst (list): List of elements
         target (int): Element to find
 
     Returns:
+
         list: list of index.
     """
     left = 0

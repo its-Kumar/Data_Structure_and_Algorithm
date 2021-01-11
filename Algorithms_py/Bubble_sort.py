@@ -2,6 +2,7 @@ def bubble_sort(elements: list):
     """Sort the list inplace using bubble sort.
 
     Args:
+    --
         elements (list): list of elements
     """
     size = len(elements)

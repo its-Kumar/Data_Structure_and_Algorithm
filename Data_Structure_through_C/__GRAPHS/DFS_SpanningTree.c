@@ -2,6 +2,7 @@
 Program for traversing a directed graph through DFS, visiting all vertices
 which are reached from start vertex or not.
 */
+// @its-Kumar
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,14 +10,14 @@ which are reached from start vertex or not.
 #define NIL -1
 #define initial 1
 #define visited 2
-int n;
-int adj[MAX][MAX];
-int state[MAX];
-int predecessor[MAX];
+int n;                //no of vertex
+int adj[MAX][MAX];    //adjacency matrix
+int state[MAX];       //state matrix
+int predecessor[MAX]; // predecessors
 void DF_Traversal();
 void DFS(int v);
 void create_graph();
-int stack[MAX], top = -1;
+int stack[MAX], top = -1; //stack for DFS
 void push(int v);
 int pop();
 int isEmpty_stack();
@@ -53,7 +54,11 @@ void DF_Traversal()
             printf("Tree Edge : %d -> %d\n", predecessor[v], v);
     }
 }
-
+/**
+ * @brief DFS from given vertex
+ *
+ * @param v vertex
+ */
 void DFS(int v)
 {
     int i;

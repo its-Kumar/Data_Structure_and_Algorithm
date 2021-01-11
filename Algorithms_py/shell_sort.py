@@ -8,6 +8,7 @@ def shell_sort(arr: list):
     """shell sort to sort the elements in place
 
     Args:
+
         arr (list): list of elements
     """
     size = len(arr)

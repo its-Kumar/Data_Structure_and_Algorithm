@@ -4,10 +4,11 @@ Problem     :       Fractional Knapsack problem using Greedy method
 """
 
 
-def find_maxProfit(weights: "list[int]", profits: "list[int]", capacity: "int", greedy_method: "str" = "max") -> float:
+def find_maxProfit(weights: "list[int]", profits: "list[int]", capacity: "int",
+                   greedy_method: "str" = "max") -> float:
     """Fractional Knapsack Problem
-
     Find maximum profit using greedy method
+
     Args:
 
         weights (List[int]): list/array of weights

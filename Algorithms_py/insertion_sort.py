@@ -1,7 +1,7 @@
 def insertion_sort(elements: list) -> None:
     """Sort the list using insertion sort algorithm.
 
-    Args:
+    Args:\n
         elements (list): list of elements
     """
     for i in range(1, len(elements)):

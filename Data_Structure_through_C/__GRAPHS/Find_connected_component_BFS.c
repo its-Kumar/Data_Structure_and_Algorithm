@@ -1,6 +1,5 @@
-/*
-Program to find connected component in an undirected graph
-*/
+// Program to find connected component in an undirected graph
+// @its-Kumar
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,14 +8,14 @@ Program to find connected component in an undirected graph
 #define waiting 2
 #define visited 3
 
-int n;
-int adj[MAX][MAX];
-int state[MAX];
-int label[MAX];
+int n;             //#of vertex
+int adj[MAX][MAX]; //adjacency matrix
+int state[MAX];    //state matrix
+int label[MAX];    //labels
 void create_graph();
 void BF_Traversal();
 void BFS(int v, int component_Num);
-int queue[MAX], front = -1, rear = -1;
+int queue[MAX], front = -1, rear = -1; // queue for BFS
 void insert_queue(int vertex);
 int del_queue();
 int isEmpty_queue();

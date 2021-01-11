@@ -11,20 +11,21 @@ int max(int a, int b)
 {
     return (a > b) ? a : b;
 }
-int findMaxProfit(int weights[], int n, int profits[], int m, int capacity)
-{
-    /*!
+
+/**
     0/1 Knapsack problem solution using dynamic programming
 
         Find out the maximum profit.Args :
 
-        weights(list[int]) : array of weights available
-        profits(list[int]) : array of profits available
-        capacity(int) : maximum capacity of knapsack
+        @param weights(list[int]) array of weights available
+        @param profits(list[int]) array of profits available
+        @param capacity(int)  maximum capacity of knapsack
 
-        Returns :
-        int : maximum profit
+        Returns
+        @return int - maximum profit
     */
+int findMaxProfit(int weights[], int n, int profits[], int m, int capacity)
+{
     if (n != m)
     {
         printf("Please provide correct values for profits and weights");

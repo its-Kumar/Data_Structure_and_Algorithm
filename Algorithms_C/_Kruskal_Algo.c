@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #define MAX 50
 
+// Edge object will contain source vertex, destination vertex and cost/weight
 struct Edge
 {
-    // Edge object will contain source vertex, destination vertex and cost/weight
     int source;
     int dest;
     int weight;
@@ -12,6 +12,7 @@ struct Edge
 //edges contains edges of graph and MST contains edges of Minimal Spanning Tree
 struct Edge edges[MAX], MST[MAX];
 
+// sort edges according to thier weights
 void sort(int n)
 {
     int i, j;
@@ -27,6 +28,12 @@ void sort(int n)
             }
         }
 }
+/**
+ * @brief Find minimum possible spanning tree using kruskal's algorithm
+ *
+ * @param n no of edges in the graph
+ * @return int minimum cost
+ */
 int Kruskal(int n)
 {
     struct Edge tmp;

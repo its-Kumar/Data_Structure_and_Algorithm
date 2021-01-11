@@ -9,7 +9,15 @@ int max(int a, int b)
 {
     return (a > b) ? a : b;
 }
-
+/**
+ * @brief print longest common subsequence
+ *
+ * @param s1 string 1
+ * @param s2 string 2
+ * @param m len of s1
+ * @param n len of s2
+ * @return int
+ */
 int lcs(char *s1, char *s2, int m, int n)
 {
     int lst[m + 1][n + 1];

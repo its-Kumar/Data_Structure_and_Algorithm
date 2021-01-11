@@ -1,11 +1,14 @@
+// program of directed graph
+// @its-Kumar
+
 #include <stdio.h>
 #include <stdlib.h>
 
 #define MAX 50
-int adj[MAX][MAX];
-int n; // no of edges
-//program of directed graph
+int adj[MAX][MAX]; //adjacency matrix
+int n;			   // no of edges
 
+//display the graph
 void display()
 {
 	int i, j;
@@ -16,6 +19,13 @@ void display()
 		printf("\n");
 	}
 }
+
+/**
+ * @brief Delete the edge from source vertex to dest vertex
+ *
+ * @param source vertex
+ * @param dest vertex
+ */
 void del_edge(int source, int dest)
 {
 	if (source < 0 || source >= n || dest < 0 || dest >= n || adj[source][dest] == 0)
@@ -25,6 +35,13 @@ void del_edge(int source, int dest)
 	}
 	adj[source][dest] = 0;
 }
+
+/**
+ * @brief insert the edge from source vertex to dest vertex
+ *
+ * @param source vertex
+ * @param dest vertex
+ */
 void insert_edge(int source, int dest)
 {
 	if (source < 0 || source >= n)
@@ -39,6 +56,8 @@ void insert_edge(int source, int dest)
 	}
 	adj[source][dest] = 1;
 }
+
+// create a Graph
 void create_graph()
 {
 	int i, max_edges, source, dest;
@@ -60,6 +79,7 @@ void create_graph()
 			adj[source][dest] = 1;
 	}
 }
+
 int main()
 {
 	int choice, source, dest;

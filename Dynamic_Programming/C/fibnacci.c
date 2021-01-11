@@ -6,8 +6,12 @@ Program: nth fibnacci number
 #include <stdio.h>
 #include <string.h>
 
-// recursive function for nth fibnacci number
-// Time Complexity: O(2^n)
+/**
+ * @brief recursive function for nth fibnacci number
+ * Time Complexity: O(2^n)
+ * @param n(int) integer number
+ * @return nth term in fibnacci series
+ */
 int fib(int n)
 {
     if (n <= 1)
@@ -20,8 +24,12 @@ int fib(int n)
     }
 }
 
-// fibnacci recursive function with memorization
 int memo[50];
+/**
+ * @brief fibnacci recursive function with memorization
+ * @param n(int) integer number
+ * @return nth term in fibnacci series
+ */
 int fib(int n)
 {
     if (n <= 1)
@@ -42,9 +50,13 @@ int fib(int n)
     return memo[n] = first + second;
 }
 
-// iterative function using dynamic programming
-// Time Complexity: O(n)
-// Space: O(n)
+/**
+ * @brief iterative function using dynamic programming
+ * Time Complexity: O(n)
+ * Space: O(n)
+ * @param n(int) integer number
+ * @return int
+ */
 int fib(int n)
 {
     int dp[n + 1];

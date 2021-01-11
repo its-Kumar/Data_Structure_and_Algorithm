@@ -3,15 +3,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// Tree node
 struct node
 {
-  struct node *lchild;
-  int info;
-  struct node *rchild;
+  struct node *lchild; //left child
+  int info;            //data
+  struct node *rchild; //right child
 };
-typedef struct node node;
-node *root = NULL;
+typedef struct node node; //Tree node
+node *root = NULL;        // Tree root
 
+// preorder traversal of tree
 void preorder(node *ptr)
 {
   if (ptr == NULL)
@@ -36,6 +38,14 @@ void postorder(node *ptr)
   postorder(ptr->rchild);
   printf("%d  ", ptr->info);
 }
+
+/**
+ * @brief Search element in the tree
+ *
+ * @param root of the tree
+ * @param key to be searcheed
+ * @return node* adress of the node
+ */
 node *search(node *root, int key)
 {
   node *ptr = root;
@@ -48,6 +58,14 @@ node *search(node *root, int key)
   else
     return search(ptr->lchild, key);
 }
+
+/**
+ * @brief Insert node into the tree
+ *
+ * @param ptr where to insert
+ * @param key what to be insert
+ * @return node*
+ */
 node *insert(node *ptr, int key)
 {
   if (ptr == NULL)
@@ -65,6 +83,13 @@ node *insert(node *ptr, int key)
     printf("Duplicate key\n");
   return ptr;
 }
+/**
+ * @brief Delete given key from the tree
+ *
+ * @param ptr
+ * @param key
+ * @return node*
+ */
 node *del(node *ptr, int key)
 {
   node *tmp, *succ;

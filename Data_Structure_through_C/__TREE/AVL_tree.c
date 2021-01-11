@@ -1,18 +1,23 @@
-//program of AVL tree
+// program of AVL tree
+// @its-Kumar
 
 #include <stdio.h>
 #include <stdlib.h>
 #define FALSE 0
 #define TRUE 1
 
+/**
+ * @brief  Tree node
+ *
+ */
 typedef struct
 {
-  struct node *lchild;
-  int info;
-  struct node *rchild;
-  int balance;
+  struct node *lchild; //left child
+  int info;            // data
+  struct node *rchild; //right child
+  int balance;         // balance factor
 } node;
-void inorder;
+void inorder();
 node *rotate_left(node *pptr);
 node *rotate_right(node *pptr);
 node *insert(node *pptr, int ikey);
@@ -29,11 +34,11 @@ node *del_rightbalance(node *pptr, int *pshorter);
 main()
 {
   int choice, key;
-  node *root = NULL;
+  node *root = NULL; //root of the tree
 
   while (1)
   {
-    printf(\n\n1.Insert\n);
+    printf("\n\n1.Insert\n");
     printf("2. Delete\n");
     printf("3. Inorder Traversal\n");
     printf("4. Quit\n");
@@ -62,6 +67,8 @@ main()
     }
   }
 }
+
+// inorder traversal of the tree
 void inorder(node *ptr)
 {
   if (ptr == NULL)
@@ -87,6 +94,13 @@ node *rotate_right(node *pptr)
   return aptr;
 }
 
+/**
+ * @brief insert node into the tree
+ *
+ * @param pptr parent pointer
+ * @param ikey key to be inserted
+ * @return node* new pointer
+ */
 node *insert(node *pptr, int ikey)
 {
   static int taller;
@@ -96,7 +110,7 @@ node *insert(node *pptr, int ikey)
     pptr->info = ikey;
     pptr->lchild = NULL;
     pptr->rchild = NULL;
-    pptr - < balance = 0;
+    pptr->balance = 0;
     taller = TRUE;
   }
   else if (ikey < pptr->info)

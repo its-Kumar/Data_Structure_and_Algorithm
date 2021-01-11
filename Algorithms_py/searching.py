@@ -1,11 +1,11 @@
-def linear_search(lst: list, n: int) -> int:
+def linear_search(lst: "list[int]", n: int) -> int:
     """Find a element in the list and return index if found otherwise return -1
 
-    Args:
-        lst (list): List of elements
-        n (int or Any): number to find
+    Args:\n
+        lst (list[int]): List of elements
+        n (int): number to find
 
-    Returns:
+    Returns:\n
         int: index of the element
     """
     for index, element in enumerate(lst):
@@ -18,11 +18,11 @@ def binary_search(lst: list, n: int) -> int:
     """Search any element in a list using binary search and return its index
         or -1
 
-    Args:
+    Args:\n
         lst (list): List of elements
         n (int or any): element to find
 
-    Returns:
+    Returns:\n
         int: index of the element
     """
     left_index = 0
@@ -46,13 +46,13 @@ def binary_search_recursive(
     """Search any element in a list using recursive binary search and return
         index of element.
 
-    Args:
+    Args:\n
         lst (list[int]): List of elements
         n (int): element to find
         left_index (int): starting index
         right_index (int): ending index
 
-    Returns:
+    Returns:\n
         int: index of element
     """
     if right_index < left_index:

@@ -15,6 +15,14 @@ int min(int a, int b)
     return (a < b) ? a : b;
 }
 
+/**
+ * @brief Find minimum coins to make given amount using given coins
+ *
+ * @param coins(int[]) array of given coins
+ * @param n(int) length of coins array
+ * @param amount(int) given amount
+ * @return int minimum number of coins
+ */
 int findMinimumCoins(int coins[], int n, int amount)
 {
     int arr[n][amount + 1];

@@ -1,23 +1,25 @@
-/*
-*Program for traversing a directed graph through BFS, visiting only those vertices
-that are reachable from start vertex
+/*Program for traversing a directed graph through BFS,
+    visiting only those vertices that are reachable from start vertex
+
+    @its-Kumar
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 100
 
+// states of vertex
 #define initial 1
 #define waiting 2
 #define visited 3
 
-int n;
-int adj[MAX][MAX];
-int state[MAX];
-void create_graph();
-void BF_Traversal();
+int n;               //no of vertex
+int adj[MAX][MAX];   //adjacency matrix
+int state[MAX];      // state matrix
+void create_graph(); // create graph
+void BF_Traversal(); // BFS traversal
 void BFS(int v);
-int queue[MAX], front = -1, rear = -1;
+int queue[MAX], front = -1, rear = -1; //queue
 void insert_queue(int vertex);
 int del_queue();
 int isEmpty_queue();
@@ -59,6 +61,11 @@ void BF_Traversal()
             BFS(v);
 }
 
+/**
+ * @brief BSF from vertex v
+ *
+ * @param vertex starting vertex
+ */
 void BFS(int vertex)
 {
     int i;
@@ -84,6 +91,7 @@ void BFS(int vertex)
     printf("\n");
 }
 
+// insert vertex into the queue
 void insert_queue(int vertex)
 {
 
@@ -98,6 +106,7 @@ void insert_queue(int vertex)
     }
 }
 
+// returns true if queue is empty
 int isEmpty_queue()
 {
     if (front == -1 || front > rear)
@@ -108,6 +117,7 @@ int isEmpty_queue()
     }
 }
 
+// delete/remove  item from the queue
 int del_queue()
 {
     int del_item;
@@ -122,6 +132,7 @@ int del_queue()
     return del_item;
 }
 
+// create graph
 void create_graph()
 {
 

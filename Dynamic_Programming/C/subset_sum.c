@@ -8,20 +8,17 @@ Dynamic Programming
 #include <stdio.h>
 #include <string.h>
 
-int isSubset_sum(int arr[], int n, int target)
-{ /**
+/**
     subset sum problem
+    @brief Find out if subset is exists in the given set with the given sum using dynamic programming
+    @param arr[]  set/array of integers
+    @param n  length of the arr
+    @param target  target sum
 
-    Find out if subset is exists in the given set with the given sum using dynamic programming
-    Parameters:
-    @param arr[]  = set/array of integers
-    @param n = length of the arr
-    @param target = target sum
-
-    Returns:
-    @return 0 if subset not found else  @return 1;
-    */
-
+    @return 0 if subset not found else 1
+*/
+int isSubset_sum(int arr[], int n, int target)
+{
     int dp[n + 1][target + 1];
 
     memset(dp, 0, sizeof(dp));

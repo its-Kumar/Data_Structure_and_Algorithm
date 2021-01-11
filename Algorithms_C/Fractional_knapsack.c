@@ -7,33 +7,35 @@
 
 #include <stdio.h>
 
+// booleans
 enum
 {
-    true = 1,
-    false = 0
+    false,
+    true
 };
 
+// knapsack items with thier weights and profit
 struct Item
 {
+    // weight of item
     int weight;
+    // profit we get if we include item
     int profit;
 };
 
-void sort(struct Item items[], int n, char key[], int reverse)
-{ /**
+/**
     Sort The items according to the value of the key
 
-    Arguments:
-        @param items(struct Item[]) : array of items
-        @param n (int) : length of the items array
-        @param key (char[]) : value of key
+        @param items array of items
+        @param n length of the items array
+        @param key  value of key
             "weight" - sort by weight
             "profit" - sort by profit
             "profit/weight", "p/w" - sort by profit/ weight value
-
-    Returns:
         @return sorted array of items
     */
+void sort(struct Item items[], int n, char key[], int reverse)
+{
     struct Item tmp;
     float obj1, obj2;
 
@@ -83,24 +85,21 @@ void sort(struct Item items[], int n, char key[], int reverse)
     }
 }
 
+/**
+*   Greedy Knapsack problem
+*   @param n(int) -    length of "profits" array
+*   @param profits(int[]) -    array of profits
+*   @param m(int) - length of "weights" array
+*   @param weights(int[]) -  array of weights
+*   @param capacity(int) -  total capacity of knapsack
+*   @param greedy_method(char[]) -  greedy method to calculate max profit
+*           "min" - consider minimum values first
+*           "max" - consider maximum values first
+*           "optimal" - consider maximum weight/profit values first
+* @return  the maximum profit using greedy method.
+*/
 float Greedy_knapsack(int n, int profits[], int m, int weights[], int capacity, char greedy_method[])
-{ /**
-    *   Greedy Knapsack problem
-    *
-    *   Arguments :
-    *   @param n (int) -    length of "profits" array
-    *   @param profits (int[]) -    array of profits
-    *   @param m (int) -    length of "weights" array
-    *   @param weights (int[]) -  array of weights
-    *   @param capacity (int) -  total capacity of knapsack
-    *   @param greedy_method (char[]) -  greedy method to calculate max profit
-    *           "min" - consider minimum values first
-    *           "max" - consider maximum values first
-    *           "optimal" - consider maximum weight/profit values first
-    *
-    * @return Returns the maximum profit using greedy method.
-    */
-
+{
     if (n != m)
     {
         printf("Please provide correct values for profits and weights");

@@ -1,7 +1,7 @@
 def swap(a: int, b: int, arr: list):
     """swap elements of array
 
-    Args:
+    Args:\n
         a (int): index 1
         b (int): index 2
         arr (list): list of elements
@@ -31,12 +31,12 @@ def partition(elements: list, start: int, end: int) -> int:
 
 def quick_sort(elements: list, start: int, end: int):
     """Quick sort implementation. Sort a list using quick sort between
-    boundries 'start' and 'end'.
-        Time Complexity:
+    boundries 'start' and 'end'.\n
+        Time Complexity:\n
         Average case: O(nlogn)
         Worst case: O(n^2)
 
-    Args:
+    Args:\n
         elements (list): list of elements
         start (int): starting index
         end (int): ending index
