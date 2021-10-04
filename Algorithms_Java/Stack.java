@@ -25,10 +25,6 @@ public class Stack {
 	}
 
 	public boolean isEmpty() {
-		// if (this.tos == -1) {
-		// return true;
-		// } else
-		// return false;
 		return this.size() == 0;
 	}
 
