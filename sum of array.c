@@ -1,5 +1,4 @@
 #include<stdio.h>
-int summation(int arr[],int low,int high);
 
 int summation(int arr[],int low,int high)
     {  
