@@ -13,6 +13,7 @@ def find_ways_brute_force(n):
     when we are at ith stair no of ways to reach it is simply the sum of no of ways to reach (i-1)stair and (i-2)stair 
     """
 
+    # Base cases
     if n == 1:
         return 1
     if n == 2:
