@@ -1,54 +1,103 @@
 #include<stdio.h>
-int get_max (int a[], int n){
-   int max = a[0];
-   for (int i = 1; i < n; i++)
-      if (a[i] > max)
-         max = a[i];
-   return max;
+
+ 
+//Function to found max from given array
+int getMax(int arr[], int n) {
+
+    int mx = arr[0];
+
+    int i;
+
+    for (i = 1; i < n; i++)
+
+        if (arr[i] > mx)
+
+            mx = arr[i];
+
+    return mx;
+
 }
-void radix_sort (int a[], int n){
-   int bucket[10][10], bucket_cnt[10];
-   int i, j, k, r, NOP = 0, divisor = 1, lar, pass;
-   lar = get_max (a, n);
-   while (lar > 0){
-      NOP++;
-      lar /= 10;
-   }
-   for (pass = 0; pass < NOP; pass++){
-      for (i = 0; i < 10; i++){
-         bucket_cnt[i] = 0;
-      }
-      for (i = 0; i < n; i++){
-         r = (a[i] / divisor) % 10;
-         bucket[r][bucket_cnt[r]] = a[i];
-         bucket_cnt[r] += 1;
-      }
-      i = 0;
-      for (k = 0; k < 10; k++){
-         for (j = 0; j < bucket_cnt[k]; j++){
-            a[i] = bucket[k][j];
-            i++;
-         }
-      }
-      divisor *= 10;
-      printf ("After pass %d : ", pass + 1);
-      for (i = 0; i < n; i++)
-         printf ("%d ", a[i]);
-      printf ("\n");
-   }
+
+ 
+
+void countSort(int arr[], int n, int exp) {
+
+    int output[n]; // output array
+
+    int i, count[10] = { 0 };
+
+ 
+
+    // Store count of occurrences in count[]
+
+    for (i = 0; i < n; i++)
+
+        count[(arr[i] / exp) % 10]++;
+
+ 
+
+    for (i = 1; i < 10; i++)
+
+        count[i] += count[i - 1];
+
+ 
+
+    // Build the output array
+
+    for (i = n - 1; i >= 0; i--) {
+
+        output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+
+        count[(arr[i] / exp) % 10]--;
+
+    }
+        for (i = 0; i < n; i++)
+
+        arr[i] = output[i];
+
 }
-int main (){
-   int i, n, a[10];
-   printf ("Enter the number of items to be sorted: ");
-   scanf ("%d", &n);
-   printf ("Enter items: ");
-   for (i = 0; i < n; i++){
-      scanf ("%d", &a[i]);
-   }
-   radix_sort (a, n);
-   printf ("Sorted items : ");
-   for (i = 0; i < n; i++)
-      printf ("%d ", a[i]);
-   printf ("\n");
-   return 0;
+
+ 
+
+// The main function to that sorts arr[] of size n using Radix Sort
+
+void radixsort(int arr[], int n) {
+
+    int m = getMax(arr, n);
+
+ 
+
+    int exp;
+
+    for (exp = 1; m / exp > 0; exp *= 10)
+
+        countSort(arr, n, exp);
+
+}
+
+ 
+//print function
+void print(int arr[], int n) {
+
+    int i;
+
+    for (i = 0; i < n; i++)
+
+        printf("%d ", arr[i]);
+
+}
+
+//Driver code
+int main() {
+
+    int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 };
+
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    radixsort(arr, n);
+
+    print(arr, n);
+
+    return 0;
+
 }
