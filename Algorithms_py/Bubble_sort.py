@@ -1,30 +1,17 @@
-def bubble_sort(elements: list):
-    """Sort the list inplace using bubble sort.
+print("This program sorts the given array using bubble sort technique")
+n=int(input("Enter the number of elements you want to insert in the array "))
+DATA=[]
+for i in range(0,n):
+    m=int(input("Enter element "))
+    DATA.append(m)
 
-    Args:
-    --
-        elements (list): list of elements
-    """
-    size = len(elements)
+print("The inserted array is", DATA)
 
-    for i in range(size - 1):
-        # if list is already sorted track it using swapped variable
-        swapped = False
+for j in range(0,n):
+    for k in range(0,n-j-1):
+        if DATA[k]>DATA[k+1]:
+            t=DATA[k]
+            DATA[k]=DATA[k+1]
+            DATA[k+1]=t
 
-        for j in range(size - 1 - i):
-            if elements[j] > elements[j + 1]:
-                # swapping
-                tmp = elements[j]
-                elements[j] = elements[j + 1]
-                elements[j + 1] = tmp
-                swapped = True
-
-        if not swapped:
-            break
-
-
-if __name__ == "__main__":
-    elements = [5, 9, 2, 1, 67, 34, 88, 34]
-    print(f"Before Sorting: {elements}")
-    bubble_sort(elements)
-    print(f"After sorting:  {elements} ")
+print("Sorted array", DATA)
