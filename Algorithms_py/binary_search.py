@@ -1,23 +1,70 @@
-''' BINARY SEARCH ALGORITHM '''
+#include<iostream>
+using namespace std;
 
-# this method returns the index of target element, if found. Otherwise it returns -1
-# this algorithm only works on arrays sorted in NON DECREASING order
-def binary_search(a:list, target:int): 
-    start = 0
-    end = len(a)-1
-    while start <= end:
-        mid = start + (end - start) // 2
-        if a[mid] < target:
-            start = mid + 1
-        elif a[mid] > target:
-            end = mid - 1
-        else:
-            return mid
-    
-    return -1
+int main()
+{
+    int DATA[20], n, i, j, middle, first, last, item, k, t;
+    cout<<"This program searches an element in the given array using binary search method: \n";
+    cout<<"Enter the number of elements you want to enter in the array: \n";
+    cin>>n;
+    cout<<"You need to insert the elements one by one\n";
+    for(i=0;i<n;i++)
+    {
+        cout<<"Enter element: ";
+        cin>>DATA[i];
+    }
+    cout<<"Our inserted array is:";
+    for(i=0;i<n;i++)
+    {
+        cout<<DATA[i]<<"  ";
+    }
+    cout<<endl;
+    cout<<"Enter the element you want to search in the array: \n";
+    cin>>item;
+    for(j=0;j<n;j++)
+    {
+        for(k=0;k<n-j-1;k++)
+        {
+            if (DATA[k]>DATA[k+1])
+            {
+                t=DATA[k];
+                DATA[k]=DATA[k+1];
+                DATA[k+1]=t;
+            }
+        }
+    }
+    //Displaying sorted array elements
+    cout<<"Sorted array:- \n";
+    for(i=0;i<n;i++)
+    {
+        cout<<DATA[i]<<" ";
+    }
+    cout<<endl;
+	first = 0;
+	last = n-1;
+	middle = (first+last)/2;
+	while (first <= last)
+	{
+	   if(DATA[middle] < item)
+	   {
+		first = middle + 1;
 
-if __name__ == '__main__':
-    a = [3,5,8,14,57,90]
-    target = 140
-    ans = binary_search(a,target)
-    print(ans)
+	   }
+	   else if(DATA[middle] == item)
+	   {
+		cout<<"Element found in the array at index "<<middle+1<<"\n"; 
+                break; 
+           } 
+           else { 
+                last = middle - 1; 
+           } 
+           middle = (first + last)/2; 
+        } 
+        if(first > last)
+	    {
+	       cout<<"Element not found in the array";
+	    }
+	return 0;
+}
+
+
